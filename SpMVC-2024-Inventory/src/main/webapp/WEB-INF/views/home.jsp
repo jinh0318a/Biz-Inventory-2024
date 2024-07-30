@@ -1,12 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set value="${pageContext.request.contextPath }" var="rootPath" />
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Insert title here</title>
-  </head>
-  <body>
-    <h1>Hello!! Korea</h1>
-    <h2>The time on the Today is ${serverTime}</h2>
-  </body>
+<html lang="ko">
+<tiles:insertAttribute name="head" />
+<body>
+	<tiles:insertAttribute name="header" />
+	<tiles:insertAttribute name="content" />
+</body>
 </html>
