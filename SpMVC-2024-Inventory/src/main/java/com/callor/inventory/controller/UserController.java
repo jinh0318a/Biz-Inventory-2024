@@ -1,5 +1,7 @@
 package com.callor.inventory.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,7 +29,12 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/login-user", method = RequestMethod.POST)
-	public String login(String id, String password) {
+	public String login(String u_id, String u_password, HttpSession session) {
+		UserVO userVO = userDao.findByID(u_id);
+		if (userVO == null || !userVO.getU_password().equals(u_password)) {
+			return "redirect:/user/login-user";
+		}
+		session.setAttribute("USER", userVO);
 		return "redirect:/";
 	}
 
@@ -38,8 +45,12 @@ public class UserController {
 
 	@RequestMapping(value = "/join-user", method = RequestMethod.POST)
 	public String join(UserVO userVO) {
+		UserVO findUser = userDao.findByID(userVO.getU_id());
+		if (findUser != null) {
+			return "redirect:/user/join-user";
+		}
 		userDao.insert(userVO);
-		return "redirect:/";
+		return "redirect:/login-user";
 	}
 
 }

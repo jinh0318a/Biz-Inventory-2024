@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.callor.inventory.dao.ManagerDao">
+
+	<insert id="insert">
+		insert into tbl_manager(m_id, m_password, m_email,
+		m_storecode)
+		values(#{m_id}, #{m_password}, #{m_email},
+		#{m_storecode})
+	</insert>
+
+	<update id="update">
+		update tbl_manager set m_password=#{m_password},
+		u_email=#{m_emil}, m_storecode=#{m_storecode} where m_id=#{m_id}
+	</update>
+
+</mapper> 
