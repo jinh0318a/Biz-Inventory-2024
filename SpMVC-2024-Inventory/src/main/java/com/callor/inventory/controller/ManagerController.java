@@ -3,11 +3,13 @@ package com.callor.inventory.controller;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.callor.inventory.dao.ManagerDao;
 import com.callor.inventory.model.ManagerVO;
+import com.callor.inventory.model.UserVO;
 import com.callor.inventory.service.ManagerService;
 
 @RequestMapping(value = "/manager")
@@ -48,4 +50,24 @@ public class ManagerController {
 		session.setAttribute("MANAGER", managerVO);
 		return "redirect:/";
 	}
+
+	@RequestMapping(value = "/modify", method = RequestMethod.GET)
+	public String modify(HttpSession session, Model model) {
+		ManagerVO managerVO = (ManagerVO) session.getAttribute("MANAGER");
+		if (managerVO == null) {
+			return "redirect:/manager/login-manager";
+		}
+		model.addAttribute("MANAGER", managerVO);
+		return null;
+	}
+
+	@RequestMapping(value = "/modify", method = RequestMethod.POST)
+	public String modify(HttpSession session, ManagerVO managerVO) {
+		ManagerVO authUser = (ManagerVO) session.getAttribute("MANAGER");
+		managerVO.setM_id(authUser.getM_id());
+		int result = managerDao.update(managerVO);
+		session.setAttribute("MANAGER", managerVO);
+		return "redirect:/";
+	}
+
 }

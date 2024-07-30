@@ -14,7 +14,7 @@
 
 	<update id="update">
 		update tbl_manager set m_password=#{m_password},
-		u_email=#{m_emil}, m_storecode=#{m_storecode} where m_id=#{m_id}
+		m_email=#{m_email}, m_storecode=#{m_storecode} where m_id=#{m_id}
 	</update>
 
 </mapper> 
