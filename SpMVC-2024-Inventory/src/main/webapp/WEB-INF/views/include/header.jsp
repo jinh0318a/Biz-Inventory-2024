@@ -11,7 +11,31 @@
 		<li class="home"><a href="${rootPath }/">Home</a></li>
 		<li class="store"><a href="${rootPath }/store/list">매장목록</a></li>
 		<li class="goods"><a href="${rootPath }/goods/list">전체상품목록</a></li>
-		<li class="login"><a href="${rootPath }/login">로그인</a></li>
-		<li class="join"><a href="${rootPath }/join">회원가입</a></li>
+		<li class="board"><a href="${rootPath }/boards/list">상품문의</a></li>
+		<c:choose>
+			<c:when
+				test="${not empty sessionScope.USER || not empty sessionScope.MANAGER}">
+				<li class="logout"><a href="${rootPath }/logout">로그아웃</a></li>
+			</c:when>
+			<c:otherwise>
+				<li class="login"><a href="${rootPath }/login">로그인</a></li>
+			</c:otherwise>
+		</c:choose>
+		<c:choose>
+			<c:when
+				test="${not empty sessionScope.USER || not empty sessionScope.MANAGER}">
+				<li class="mypage"><c:choose>
+						<c:when test="${not empty sessionScope.USER }">
+							<a href="${rootPath }/user/modify">정보수정</a>
+						</c:when>
+						<c:otherwise>
+							<a href="${rootPath }/manager/modify">정보수정</a>
+						</c:otherwise>
+					</c:choose></li>
+			</c:when>
+			<c:otherwise>
+				<li class="join"><a href="${rootPath }/join">회원가입</a></li>
+			</c:otherwise>
+		</c:choose>
 	</ul>
 </nav>

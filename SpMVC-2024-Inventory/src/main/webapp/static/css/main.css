@@ -41,7 +41,8 @@ nav.main {
       padding: 12px 16px;
     }
     li.notice,
-    li.login {
+    li.login,
+    li.logout {
       margin-left: auto;
     }
     li:hover {

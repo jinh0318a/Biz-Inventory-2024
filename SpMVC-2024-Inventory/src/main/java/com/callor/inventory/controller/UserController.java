@@ -50,7 +50,16 @@ public class UserController {
 			return "redirect:/user/join-user";
 		}
 		userDao.insert(userVO);
-		return "redirect:/login-user";
+		return "redirect:/user/login-user";
+	}
+
+	@RequestMapping(value = "/modify", method = RequestMethod.GET)
+	public String modify(HttpSession session) {
+		UserVO userVO = (UserVO) session.getAttribute("USER");
+		if (userVO == null) {
+			return "redirect:/user/login-user";
+		}
+		return null;
 	}
 
 }

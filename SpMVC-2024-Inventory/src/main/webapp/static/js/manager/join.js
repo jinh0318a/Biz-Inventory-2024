@@ -15,8 +15,8 @@ const ERROR_MESSAGE_MANAGER = [
 document.addEventListener("DOMContentLoaded", () => {
   const join_form = document.querySelector("form.join.manager");
 
-  const join_inputs = join_form.querySelectorAll("input");
-  const error_inputs = join_form.querySelectorAll("span");
+  const join_inputs = join_form?.querySelectorAll("input");
+  const error_inputs = join_form?.querySelectorAll("span");
 
   const emptyValid = (index) => {
     const text = join_inputs[index].value;

@@ -11,10 +11,14 @@
 <link href="${rootPath }/static/css/login.css" rel="stylesheet">
 <link href="${rootPath }/static/css/manager/join.css" rel="stylesheet">
 <link href="${rootPath }/static/css/user/join.css" rel="stylesheet">
+<link href="${rootPath }/static/css/user/login.css" rel="stylesheet">
+<link href="${rootPath }/static/css/manager/login.css" rel="stylesheet">
 <script>
 	// JSP 에서 선언된 rootPath 변수를 *.js 파일에서 사용할 수 있도록 JS 의 변수로 선언하기
 	const rootPath = "${rootPath}"
 </script>
 <script src="${rootPath }/static/js/user/join.js"></script>
+<script src="${rootPath }/static/js/user/login.js"></script>
+<script src="${rootPath }/static/js/manager/login.js"></script>
 <script src="${rootPath }/static/js/manager/join.js"></script>
 </head>

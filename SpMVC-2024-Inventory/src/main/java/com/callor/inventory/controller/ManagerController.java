@@ -31,7 +31,7 @@ public class ManagerController {
 	@RequestMapping(value = "/join-manager", method = RequestMethod.POST)
 	public String join(ManagerVO managerVO) {
 		managerDao.insert(managerVO);
-		return "redirect:/";
+		return "redirect:/manager/login-manager";
 	}
 
 	@RequestMapping(value = "/login-manager", method = RequestMethod.GET)
