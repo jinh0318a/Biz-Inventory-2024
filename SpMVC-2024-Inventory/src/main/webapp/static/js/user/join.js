@@ -47,5 +47,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  join_inputs[INPUT_INDEX_USER.button].addEventListener("click", onJoinSubmit);
+  join_inputs[INPUT_INDEX_USER.button]?.addEventListener("click", onJoinSubmit);
 });

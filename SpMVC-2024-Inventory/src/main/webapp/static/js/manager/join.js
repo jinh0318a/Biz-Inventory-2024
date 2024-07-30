@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  join_inputs[INPUT_INDEX_MANAGER.button].addEventListener(
+  join_inputs[INPUT_INDEX_MANAGER.button]?.addEventListener(
     "click",
     onJoinSubmit
   );

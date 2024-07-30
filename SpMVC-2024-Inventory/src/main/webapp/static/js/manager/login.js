@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  login_inputs[INPUT_INDEX_MANAGER_LOGIN.button].addEventListener(
+  login_inputs[INPUT_INDEX_MANAGER_LOGIN.button]?.addEventListener(
     "click",
     onloginSubmit
   );
