@@ -12,4 +12,14 @@ public class HomeController {
 		return "home";
 	}
 
+	@RequestMapping(value = "/join", method = RequestMethod.GET)
+	public String join() {
+		return null;
+	}
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login() {
+		return null;
+	}
+
 }

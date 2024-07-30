@@ -21,24 +21,25 @@ public class UserController {
 		this.userService = userService;
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/login-user", method = RequestMethod.GET)
 	public String login() {
 		return null;
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	@RequestMapping(value = "/login-user", method = RequestMethod.POST)
 	public String login(String id, String password) {
-		return null;
+		return "redirect:/";
 	}
 
-	@RequestMapping(value = "/join", method = RequestMethod.GET)
+	@RequestMapping(value = "/join-user", method = RequestMethod.GET)
 	public String join() {
 		return null;
 	}
 
-	@RequestMapping(value = "/join", method = RequestMethod.POST)
+	@RequestMapping(value = "/join-user", method = RequestMethod.POST)
 	public String join(UserVO userVO) {
-		return null;
+		userDao.insert(userVO);
+		return "redirect:/";
 	}
 
 }

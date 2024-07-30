@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.callor.student.persistance.UserDao">
+<mapper namespace="com.callor.inventory.dao.UserDao">
 
 	<insert id="insert">
 		insert into tbl_user(u_id, u_password, u_email,
@@ -14,7 +14,7 @@
 
 	<update id="update">
 		update tbl_user set u_password=#{u_password},
-		u_email=#{u_eamil}, u_nick=#{u_nick} where u_id=#{u_id}
+		u_email=#{u_emil}, u_nick=#{u_nick} where u_id=#{u_id}
 	</update>
 
 </mapper> 

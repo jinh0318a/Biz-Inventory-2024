@@ -11,7 +11,7 @@
 		<li class="home"><a href="${rootPath }/">Home</a></li>
 		<li class="store"><a href="${rootPath }/store/list">매장목록</a></li>
 		<li class="goods"><a href="${rootPath }/goods/list">전체상품목록</a></li>
-		<li class="login"><a href="${rootPath }/user/login">로그인</a></li>
-		<li class="join"><a href="${rootPath }/user/join">회원가입</a></li>
+		<li class="login"><a href="${rootPath }/login">로그인</a></li>
+		<li class="join"><a href="${rootPath }/join">회원가입</a></li>
 	</ul>
 </nav>

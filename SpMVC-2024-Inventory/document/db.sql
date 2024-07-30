@@ -24,7 +24,7 @@ create table tbl_manager(
 m_id	varchar(20)		PRIMARY KEY		,	
 m_password	varchar(20)	NOT NULL	,			
 m_storecode	varchar(6)	NOT NULL,
-
+m_email varchar(20) NOT NULL,
 foreign key (m_storecode) references tbl_store(s_code)
 
 );
@@ -42,3 +42,5 @@ foreign key (i_storecode) references	tbl_store	(s_code)
 drop table tbl_inventory;
 drop table tbl_manager;
 select * from tbl_goods;
+
+select * from tbl_user;
