@@ -16,7 +16,7 @@ section.join.manager {
     font-weight: 900;
   }
 
-  form.join {
+  form.join.manager {
     width: 100%;
     background-color: aliceblue;
     border-radius: 10px;

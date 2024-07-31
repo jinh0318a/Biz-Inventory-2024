@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+section.store.list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    margin: 10px auto;
+    background-color: darksalmon;
+    border-radius: 10px;
+    border: none;
+    span.name {
+      font-weight: 900;
+      font-size: 2.5rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: deepskyblue;
+    }
+  }
+}
