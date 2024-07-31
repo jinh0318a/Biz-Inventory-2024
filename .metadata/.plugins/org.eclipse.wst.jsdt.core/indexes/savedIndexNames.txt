@@ -1,9 +1,7 @@
-INDEX VERSION 1.4+D:\workspace\project-inventory\Biz-Inventory-2024\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1965429056.index
-3658378953.index
-807346590.index
-2119201673.index
-1838914558.index
-1855474459.index
+INDEX VERSION 1.4+C:\Users\KMS203\Documents\workspace\inventory-project\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
 1581065068.index
 3130419372.index
+1538176250.index
+1920852086.index
+1017473890.index
+2577939053.index
