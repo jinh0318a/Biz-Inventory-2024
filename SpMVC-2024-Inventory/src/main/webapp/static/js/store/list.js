@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const onClickHandler = async () => {
     const response = await fetch(
-      `${rootPath}/store/detail?s_code=${STORE_CODE}`
+      `${rootPath}/store/detail?s_code=${STORE_CODE[CLICK_INDEX_STORE]}`
     );
     const html = await response.text();
     const subBox = document.querySelector("article.info");

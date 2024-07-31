@@ -7,6 +7,8 @@ D:\workspace\project-inventory\Biz-Inventory-2024\.metadata\.plugins\org.eclipse
 \SpMVC-2024-Inventory\src\main\java
 C:\Users\KMS203\Documents\workspace\inventory-project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\304819892.index
 \SpMVC-2024-Inventory\src\main\java
+C:\Users\KMS203\Documents\workspace\inventory-project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2666838072.index
+\SpMVC-2024-Inventory\src\main\java
 D:\workspace\project-inventory\Biz-Inventory-2024\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3130419372.index
 \SpMVC-2024-Inventory\src\main\java
 C:\Users\KMS203\Documents\workspace\inventory-project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2119201673.index
