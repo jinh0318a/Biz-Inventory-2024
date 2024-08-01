@@ -44,5 +44,20 @@ drop table tbl_manager;
 select * from tbl_goods;
 
 select * from tbl_user;
+select * from tbl_manager;
+select * from tbl_store;
+select * from tbl_goods;
+select * from tbl_inventory;
 
 delete from tbl_user where u_id='';
+
+
+create view view_inventory
+as
+(
+select s_name, g_name, g_price ,i_count 
+from tbl_store as s join tbl_inventory as i on s.s_code = i.i_storecode 
+join tbl_goods as g on g_code = i.i_goodscode
+);
+
+select * from view_inventory;

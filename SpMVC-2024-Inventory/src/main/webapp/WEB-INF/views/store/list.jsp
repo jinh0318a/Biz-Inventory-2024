@@ -5,7 +5,7 @@
 <section class="store list">
 	<article class="list">
 		<c:forEach items="${STORELIST }" var="one">
-			<div class="store">
+			<div class="store" data-s_code="${one.s_code }">
 				<span class="name">${one.s_name }</span>
 			</div>
 		</c:forEach>
