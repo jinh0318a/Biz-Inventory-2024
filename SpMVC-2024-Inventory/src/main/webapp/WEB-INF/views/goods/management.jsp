@@ -9,6 +9,7 @@
 	<table>
 		<thead>
 			<tr>
+				<th>상품코드</th>
 				<th>상품명</th>
 				<th>가격</th>
 				<th>재고</th>
@@ -17,6 +18,7 @@
 		<tbody>
 			<c:forEach items="${GOODS }" var="one">
 				<tr data-g_code="${one.g_code }">
+					<td>${one.g_code }</td>
 					<td>${one.g_name }</td>
 					<td>${one.g_price }</td>
 					<td>${one.g_count }</td>

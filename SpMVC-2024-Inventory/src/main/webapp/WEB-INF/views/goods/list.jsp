@@ -6,6 +6,10 @@
 	<div>
 		<h2>전체 상품 목록</h2>
 	</div>
+	<div class="search">
+		<input type="text" class="search" name="word" placeholder="검색하실 상품을 입력하세요"/>
+		<input type="button" class="button" value="상품검색" />
+	</div>
 	<table>
 		<thead>
 			<tr>

@@ -5,6 +5,7 @@ section.store.list {
   justify-content: center;
   align-items: center;
   width: 100%;
+  gap: 10%;
   article.list {
     div {
       flex: 1;
@@ -29,7 +30,9 @@ section.store.list {
       }
     }
   }
+
   article.info {
+    height: 100%;
     div {
       flex: 1;
       display: flex;
@@ -39,9 +42,16 @@ section.store.list {
       align-items: center;
       padding: 1.5rem;
       margin: 10px auto;
-      background-color: darksalmon;
+      background-color: mediumpurple;
       border-radius: 10px;
       border: none;
+      height: 600px;
+
+      img {
+        width: 200px;
+        height: 300px;
+      }
+
       span.name {
         font-weight: 900;
         font-size: 2.5rem;

@@ -49,4 +49,15 @@ public class GoodsController {
 		return null;
 	}
 
+	@RequestMapping(value = "/input", method = RequestMethod.GET)
+	public String input(String g_code, Model model, HttpSession session) {
+		ManagerVO manager = (ManagerVO) session.getAttribute("MANAGER");
+		if (manager == null) {
+			return "redirect:/manager/login-manager";
+		}
+		GoodsVO good = goodsDao.findByCode(g_code);
+		model.addAttribute("GOOD", good);
+		return null;
+	}
+
 }
