@@ -3,6 +3,7 @@ package com.callor.inventory.dao;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -25,4 +26,6 @@ public interface CommentDao {
 	@Select("select * from tbl_comment where c_writer=#{m_id}")
 	public List<CommentVO> findByManagerID(String m_id);
 
+	@Insert("insert into tbl_comment(c_body, c_writer, c_writed_at, c_boardcode) values(#{c_body},#{c_writer},#{c_writed_at},#{c_boardcode})")
+	public int insert(CommentVO commentVO);
 }

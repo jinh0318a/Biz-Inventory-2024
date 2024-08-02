@@ -12,8 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.callor.inventory.dao.BoardDao;
+import com.callor.inventory.dao.CommentDao;
 import com.callor.inventory.model.BoardVO;
-import com.callor.inventory.model.ManagerVO;
+import com.callor.inventory.model.CommentVO;
 import com.callor.inventory.model.UserVO;
 
 @Controller
@@ -21,10 +22,12 @@ import com.callor.inventory.model.UserVO;
 public class BoardController {
 
 	private final BoardDao boardDao;
+	private final CommentDao commentDao;
 
-	public BoardController(BoardDao boardDao) {
+	public BoardController(BoardDao boardDao, CommentDao commentDao) {
 		super();
 		this.boardDao = boardDao;
+		this.commentDao = commentDao;
 	}
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
@@ -44,7 +47,7 @@ public class BoardController {
 	}
 
 	@RequestMapping(value = "/input", method = RequestMethod.POST)
-	public String input(BoardVO boardVO, HttpSession session) {
+	public String input(BoardVO boardVO, HttpSession session, Model model) {
 		UserVO user = (UserVO) session.getAttribute("USER");
 		if (user == null) {
 			return "redirect:/user/login-user";
@@ -64,7 +67,9 @@ public class BoardController {
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
 	public String detail(String b_code, Model model) {
 		BoardVO board = boardDao.findByCode(b_code);
+		List<CommentVO> comments = commentDao.findByBoard(b_code);
 		model.addAttribute("BOARD", board);
+		model.addAttribute("COMMENTS", comments);
 		return null;
 	}
 

@@ -39,6 +39,29 @@ foreign key (i_goodscode) references	tbl_goods	(g_code),
 foreign key (i_storecode) references	tbl_store	(s_code)
 );
 
+create table tbl_board(
+	b_code bigint AUTO_INCREMENT primary key ,
+    b_title varchar(100) not null,
+    b_body varchar(3000) not null,
+    b_writer varchar(20) not null,
+    b_writed_at varchar(20) not null,
+    foreign key (b_writer) references tbl_user(u_id)
+);
+
+create table tbl_comment(
+	c_code bigint AUTO_INCREMENT primary key ,
+    c_body varchar(3000) not null,
+    c_writer varchar(20) not null,
+    c_writed_at varchar(20) not null,
+    c_boardcode bigint not null,
+    foreign key (c_writer) references tbl_manager(m_id),
+    foreign key (c_boardcode) references tbl_board(b_code)
+);
+select * from tbl_board;
+
+drop table tbl_comment;
+drop table tbl_board;
+
 drop table tbl_inventory;
 drop table tbl_manager;
 select * from tbl_goods;
