@@ -18,8 +18,8 @@ public interface GoodsDao {
 	@Select("select * from view_goods where g_storecode=#{g_storecode}")
 	public List<GoodsVO> findByStoreCode(String g_storecode);
 
-	@Update("update view_goods set g_count=#{g_count} where g_code=#{g_code} and g_storecode=#{g_storecode}")
-	public int updateGoodsCount(GoodsVO goodsVO, String count);
+	@Update("update view_goods set g_count=#{param1} where g_code=#{param2} and g_storecode=#{param3}")
+	public int updateGoodsCount(String g_count, String g_code, String g_storecode);
 
 	@Select("select * from view_goods where g_name like #{word}")
 	public List<GoodsVO> searchByWord(String word);

@@ -143,10 +143,26 @@ public class GoodsController {
 	}
 
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
-	public String detail(String g_code, Model model) {
+	public String detail(String g_code, Model model, HttpSession session) {
+		ManagerVO manager = (ManagerVO) session.getAttribute("MANAGER");
 		GoodsVO good = goodsDao.findByCode(g_code);
 		model.addAttribute("GOOD", good);
-		return "/detail/detail";
+		if (manager == null) {
+			return "/detail/detail";
+		}
+		return "/detail/detail-manager";
+	}
+
+	@RequestMapping(value = "/update-detail", method = RequestMethod.POST)
+	public String update(String g_count, String g_code, HttpSession session) {
+		ManagerVO manager = (ManagerVO) session.getAttribute("MANAGER");
+		if (manager == null) {
+			return "redirect:/manager/login-manager";
+		}
+		GoodsVO good = goodsDao.findByCode(g_code);
+		goodsDao.updateGoodsCount(g_count, good.getG_code(), good.getG_storecode());
+
+		return "redirect:/goods/management";
 	}
 
 }
