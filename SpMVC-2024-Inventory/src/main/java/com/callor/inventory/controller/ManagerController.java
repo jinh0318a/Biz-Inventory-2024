@@ -9,19 +9,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.callor.inventory.dao.ManagerDao;
 import com.callor.inventory.model.ManagerVO;
-import com.callor.inventory.model.UserVO;
-import com.callor.inventory.service.ManagerService;
 
 @RequestMapping(value = "/manager")
 @Controller
 public class ManagerController {
 
-	private final ManagerService managerService;
 	private final ManagerDao managerDao;
 
-	public ManagerController(ManagerService managerService, ManagerDao managerDao) {
+	public ManagerController(ManagerDao managerDao) {
 		super();
-		this.managerService = managerService;
 		this.managerDao = managerDao;
 	}
 

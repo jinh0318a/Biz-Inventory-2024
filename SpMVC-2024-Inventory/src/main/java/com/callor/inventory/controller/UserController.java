@@ -9,19 +9,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.callor.inventory.dao.UserDao;
 import com.callor.inventory.model.UserVO;
-import com.callor.inventory.service.UserService;
 
 @RequestMapping(value = "/user")
 @Controller
 public class UserController {
 
 	private final UserDao userDao;
-	private final UserService userService;
 
-	public UserController(UserDao userDao, UserService userService) {
+	public UserController(UserDao userDao) {
 		super();
 		this.userDao = userDao;
-		this.userService = userService;
 	}
 
 	@RequestMapping(value = "/login-user", method = RequestMethod.GET)

@@ -6,11 +6,19 @@
 	<div>
 		<h2>전체 상품 목록</h2>
 	</div>
-	<div class="search">
-		<input type="text" class="search" name="word" placeholder="검색하실 상품을 입력하세요"/>
-		<input type="button" class="button" value="상품검색" />
-	</div>
-	<table>
+	<form class="search" action="${rootPath }/goods/search">
+		<select name="store">
+			<option value="0">매장 선택</option>
+			<option value="1">둔산 직매장</option>
+			<option value="2">모악 직매장</option>
+			<option value="3">삼천 직매장</option>
+			<option value="4">하가 직매장</option>
+			<option value="5">효자 직매장</option>
+		</select> <input type="text" class="search" name="word"
+			placeholder="검색하실 상품을 입력하세요" /> <input type="submit" class="button"
+			value="상품검색" />
+	</form>
+	<table class="goods list">
 		<thead>
 			<tr>
 				<th>상품명</th>

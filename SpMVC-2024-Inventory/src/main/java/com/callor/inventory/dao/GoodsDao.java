@@ -21,4 +21,13 @@ public interface GoodsDao {
 	@Update("update view_goods set g_count=#{g_count} where g_code=#{g_code} and g_storecode=#{g_storecode}")
 	public int updateGoodsCount(GoodsVO goodsVO, String count);
 
+	@Select("select * from view_goods where g_name like #{word}")
+	public List<GoodsVO> searchByWord(String word);
+
+	@Select("select * from view_goods where g_storecode=#{param1} and g_name like #{param2}")
+	public List<GoodsVO> searchByStoreAndWord(String g_storecode, String word);
+
+	@Select("select * from view_goods where g_storecode=#{param1} and (g_name like #{param2} or g_code like #{param2})")
+	public List<GoodsVO> searchByWordOrCode(String g_storecode, String word);
+
 }

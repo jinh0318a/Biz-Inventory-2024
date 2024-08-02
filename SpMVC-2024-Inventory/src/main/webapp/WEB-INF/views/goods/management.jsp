@@ -6,7 +6,12 @@
 	<div>
 		<h2>매장 상품 관리 (${STORE.s_name})</h2>
 	</div>
-	<table>
+	<form class="search" action="${rootPath }/goods/search-manager">
+		<input type="text" class="search" name="word"
+			placeholder="검색하실 상품을 입력하세요" /> <input type="submit" class="button"
+			value="상품검색" />
+	</form>
+	<table class="goods list">
 		<thead>
 			<tr>
 				<th>상품코드</th>
