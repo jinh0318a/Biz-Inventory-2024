@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -139,6 +140,13 @@ public class GoodsController {
 		model.addAttribute("GOODS", goodsList);
 		model.addAttribute("STORE", storename);
 		return null;
+	}
+
+	@RequestMapping(value = "/detail", method = RequestMethod.GET)
+	public String detail(String g_code, Model model) {
+		GoodsVO good = goodsDao.findByCode(g_code);
+		model.addAttribute("GOOD", good);
+		return "/detail/detail";
 	}
 
 }

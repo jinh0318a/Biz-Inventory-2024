@@ -18,6 +18,7 @@
 			placeholder="검색하실 상품을 입력하세요" /> <input type="submit" class="button"
 			value="상품검색" />
 	</form>
+	<div class="list">
 	<table class="goods list">
 		<thead>
 			<tr>
@@ -36,4 +37,6 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	<article class="detail"></article>
+	</div>
 </section>
