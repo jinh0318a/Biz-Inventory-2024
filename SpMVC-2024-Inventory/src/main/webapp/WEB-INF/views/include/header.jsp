@@ -11,7 +11,7 @@
 		<li class="home"><a href="${rootPath }/">Home</a></li>
 		<li class="store"><a href="${rootPath }/store/list">매장목록</a></li>
 		<li class="goods"><a href="${rootPath }/goods/list">전체상품목록</a></li>
-		<li class="board"><a href="${rootPath }/boards/list">상품문의</a></li>
+		<li class="board"><a href="${rootPath }/board/list">상품문의</a></li>
 		<c:if test="${not empty sessionScope.MANAGER }">
 			<li class="goods"><a href="${rootPath }/goods/management">재고관리</a></li>
 		</c:if>

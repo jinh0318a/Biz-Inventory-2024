@@ -29,4 +29,5 @@
 <script src="${rootPath }/static/js/manager/modify.js"></script>
 <script src="${rootPath }/static/js/store/list.js"></script>
 <script src="${rootPath }/static/js/goods/list.js"></script>
+<script src="${rootPath }/static/js/board/list.js"></script>
 </head>
