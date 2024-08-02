@@ -36,7 +36,7 @@
 				</tbody>
 			</table>
 			<div>
-				<button type="submit">전체 수정</button>
+				<button type="submit" class="button">전체 수정</button>
 			</div>
 		</form>
 		<article class="detail"></article>

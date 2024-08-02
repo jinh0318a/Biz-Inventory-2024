@@ -7,9 +7,9 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.callor.inventory.dao.GoodsDao;
 import com.callor.inventory.dao.StoreDao;
@@ -162,6 +162,30 @@ public class GoodsController {
 		GoodsVO good = goodsDao.findByCode(g_code);
 		goodsDao.updateGoodsCount(g_count, good.getG_code(), good.getG_storecode());
 
+		return "redirect:/goods/management";
+	}
+
+	@RequestMapping(value = "/update-all", method = RequestMethod.POST)
+	public String updateAll(@RequestParam("g_count") List<String> gCounts, @RequestParam("g_code") List<String> gCodes,
+			HttpSession session) {
+		ManagerVO manager = (ManagerVO) session.getAttribute("MANAGER");
+		if (manager == null) {
+			return "redirect:/manager/login-manager";
+		}
+
+		for (int i = 0; i < gCodes.size(); i++) {
+			String gCode = gCodes.get(i);
+			String gCount = gCounts.get(i);
+
+			GoodsVO good = goodsDao.findByCode(gCode);
+			if (good != null) {
+				try {
+					goodsDao.updateGoodsCount(gCount, good.getG_code(), good.getG_storecode());
+				} catch (NumberFormatException e) {
+					System.out.println(e);
+				}
+			}
+		}
 		return "redirect:/goods/management";
 	}
 

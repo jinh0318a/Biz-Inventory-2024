@@ -4,6 +4,17 @@ section.goods.list {
   height: 100%;
   text-align: center;
 
+  button {
+    padding: 8px 10px;
+    background-color: #aaa;
+    border-radius: 10px;
+    border: none;
+    &:hover {
+      background-color: blue;
+      color: white;
+    }
+  }
+
   form.search {
     display: flex;
     justify-content: center;
@@ -55,13 +66,10 @@ section.goods.list {
     }
   }
   div.list {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-
+    height: 80%;
+    text-align: center;
     table {
-      width: 50%;
+      width: 85%;
       margin: 10px auto;
       border-collapse: collapse;
 
@@ -116,15 +124,45 @@ section.goods.list {
     }
 
     article.detail {
-      width: 30%;
+      width: 85%;
+      margin: 10px auto;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-color: aliceblue;
-      img.goods {
-        width: 80%;
-        height: 300px;
+      background-color: #ddd;
+
+      div.detail {
+        display: flex;
+
+        div.description {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        img {
+          height: 100px;
+          width: 100px;
+        }
+      }
+
+      form.detail {
+        display: flex;
+        width: 100%;
+
+        input {
+          text-align: right;
+        }
+
+        div.image {
+          flex: 1;
+        }
+
+        div.description {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
       }
     }
   }
