@@ -10,5 +10,8 @@
 			<div class="slide">슬라이드 3</div>
 		</div>
 	</div>
-	<div class="??"></div>
+	<div class="navigation">
+		<button class="prev">이전</button>
+		<button class="next">다음</button>
+	</div>
 </section>

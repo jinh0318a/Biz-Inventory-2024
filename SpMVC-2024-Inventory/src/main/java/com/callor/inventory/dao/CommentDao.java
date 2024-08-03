@@ -18,7 +18,7 @@ public interface CommentDao {
 	public int delete(String c_code);
 
 	@Update("update tbl_comment set c_body=#{c_body} where c_code=#{c_code}F")
-	public int update(CommentVO commentVO);
+	public boolean update(CommentVO commentVO);
 
 	@Select("select * from tbl_comment where c_writer=#{u_id}")
 	public List<CommentVO> findByUserID(String u_id);
@@ -28,4 +28,7 @@ public interface CommentDao {
 
 	@Insert("insert into tbl_comment(c_body, c_writer, c_writed_at, c_boardcode) values(#{c_body},#{c_writer},#{c_writed_at},#{c_boardcode})")
 	public int insert(CommentVO commentVO);
+
+	@Select("select * from tbl_comment where c_code=#{c_code}")
+	public CommentVO findByCode(String c_code);
 }

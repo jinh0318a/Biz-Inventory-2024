@@ -19,20 +19,23 @@
 			<input type="hidden" name="c_boardcode" value="${BOARD.b_code }" />
 			댓글 <input type="text" name="c_body" /><input type="submit"
 				value="작성" />
-			<c:forEach items="${COMMENTS }" var="one">
-				<div>
-					${one.c_body } ${one.c_writer } ${one.c_writed_at }
-					<div>
-						<c:if test="${sessionScope.MANAGER.m_id == one.c_writer }">
-							<button>수정</button>
-							<button>삭제</button>
-						</c:if>
-					</div>
-				</div>
-			</c:forEach>
 		</form>
+		<c:forEach items="${COMMENTS }" var="one">
+			<div id="comment-${one.c_code}">
+				<span class="comment-text">${one.c_body }</span> ${one.c_writer }
+				${one.c_writed_at }
+				<div>
+					<c:if test="${sessionScope.MANAGER.m_id == one.c_writer }">
+						<button class="edit-btn" data-code="${one.c_code}">수정</button>
+						<a href="${rootPath }/comment/delete?c_code=${one.c_code}"><input
+							type="button" value="삭제"></a>
+					</c:if>
+				</div>
+			</div>
+		</c:forEach>
+
 	</div>
 	<div>
-		<button>목록</button>
+		<a href="${rootPath }/board/list"><input type="button" value="목록"></a>
 	</div>
 </section>
