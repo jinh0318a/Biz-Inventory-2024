@@ -17,6 +17,8 @@
 <link href="${rootPath }/static/css/manager/modify.css" rel="stylesheet">
 <link href="${rootPath }/static/css/store/list.css" rel="stylesheet">
 <link href="${rootPath }/static/css/goods/list.css" rel="stylesheet">
+<link href="${rootPath }/static/css/board/detail.css" rel="stylesheet">
+<link href="${rootPath }/static/css/board/input.css" rel="stylesheet">
 <script>
 	// JSP 에서 선언된 rootPath 변수를 *.js 파일에서 사용할 수 있도록 JS 의 변수로 선언하기
 	const rootPath = "${rootPath}"

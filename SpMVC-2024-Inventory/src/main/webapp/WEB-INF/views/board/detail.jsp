@@ -2,10 +2,12 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set value="${pageContext.request.contextPath }" var="rootPath" />
-<section>
-	<div>${BOARD.b_title }</div>
-	<div>${BOARD.b_writer }${BOARD.b_writed_at }</div>
-	<div>${BOARD.b_body }</div>
+<section class="board detail">
+	<div class="board">
+		<div>${BOARD.b_title }</div>
+		<div class="writer">${BOARD.b_writer }${BOARD.b_writed_at }</div>
+		<div>${BOARD.b_body }</div>
+	</div>
 	<div>
 		<c:if test="${sessionScope.USER.u_id == BOARD.b_writer }">
 			<a href="${rootPath }/board/update?b_code=${BOARD.b_code}"><input
@@ -17,8 +19,10 @@
 	<div>
 		<form method="post" action="${rootPath }/comment/input">
 			<input type="hidden" name="c_boardcode" value="${BOARD.b_code }" />
-			댓글 <input type="text" name="c_body" /><input type="submit"
-				value="작성" />
+			<div class="comment-input">
+				<textarea rows="4" cols="50" name="c_body"></textarea>
+				<input type="submit" value="작성" />
+			</div>
 		</form>
 		<c:forEach items="${COMMENTS }" var="one">
 			<div id="comment-${one.c_code}">
@@ -35,7 +39,7 @@
 		</c:forEach>
 
 	</div>
-	<div>
+	<div class="list">
 		<a href="${rootPath }/board/list"><input type="button" value="목록"></a>
 	</div>
 </section>

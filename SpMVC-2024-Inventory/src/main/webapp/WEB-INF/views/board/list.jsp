@@ -26,7 +26,7 @@
 			</tbody>
 		</table>
 		<div>
-			<a href="${rootPath }/board/input"><input type="button"
+			<a href="${rootPath }/board/input"><input type="button" class="board input"
 				value="글작성" /></a>
 		</div>
 	</div>

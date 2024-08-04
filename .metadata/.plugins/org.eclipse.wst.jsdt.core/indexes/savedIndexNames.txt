@@ -7,4 +7,3 @@ INDEX VERSION 1.4+D:\workspace\project-inventory\Biz-Inventory-2024\.metadata\.p
 1855474459.index
 1581065068.index
 3284216402.index
-1128270969.index

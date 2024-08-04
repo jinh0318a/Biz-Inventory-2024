@@ -7,8 +7,8 @@ INDEX VERSION 1.131+D:\workspace\project-inventory\Biz-Inventory-2024\.metadata\
 252512372.index
 4221351697.index
 241370720.index
-2514056661.index
 4017458086.index
+2514056661.index
 2209618813.index
 3125293528.index
 2983014186.index
@@ -30,8 +30,8 @@ INDEX VERSION 1.131+D:\workspace\project-inventory\Biz-Inventory-2024\.metadata\
 541194962.index
 2454218437.index
 3333421794.index
-3019413932.index
 2180693941.index
+3019413932.index
 1584022966.index
 935156722.index
 725518659.index
@@ -59,7 +59,6 @@ INDEX VERSION 1.131+D:\workspace\project-inventory\Biz-Inventory-2024\.metadata\
 947704319.index
 2718400925.index
 154417742.index
-1338439824.index
 816383790.index
 1865797976.index
 1651136979.index
