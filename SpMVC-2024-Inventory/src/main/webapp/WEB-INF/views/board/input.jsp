@@ -5,8 +5,8 @@
 <section class="board input">
 	<h1>글 작성</h1>
 	<form method="post" class="board input">
-		제목 <input type="text" name="b_title" /> 내용
-		<textarea rows="" cols="" name="b_body"></textarea>
-		<input type="submit" value="작성">
+		제목 <input type="text" name="b_title" class="board title" /> 내용
+		<textarea rows="" cols="" name="b_body" class="board body"></textarea>
+		<input type="submit" value="작성" class="btn-save">
 	</form>
 </section>

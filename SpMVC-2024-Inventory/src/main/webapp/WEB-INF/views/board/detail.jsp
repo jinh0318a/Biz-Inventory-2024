@@ -11,9 +11,9 @@
 	<div>
 		<c:if test="${sessionScope.USER.u_id == BOARD.b_writer }">
 			<a href="${rootPath }/board/update?b_code=${BOARD.b_code}"><input
-				type="button" value="수정" /></a>
+				type="button" value="수정" class="update button" /></a>
 			<a href="${rootPath }/board/delete?b_code=${BOARD.b_code}"><input
-				type="button" value="삭제" /></a>
+				type="button" value="삭제" class="delete button" /></a>
 		</c:if>
 	</div>
 	<div>
