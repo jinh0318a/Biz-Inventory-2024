@@ -15,7 +15,7 @@
 			<div class="name">상품명 ${GOOD.g_name }</div>
 			<div>가격 ${GOOD.g_price }원</div>
 			<div>
-				수량 <input name="g_count" type="number" value="${GOOD.g_count }" />개
+				재고 <input name="g_count" type="number" value="${GOOD.g_count }" />개
 			</div>
 			<div>
 				<button type="submit" class="button">재고 수정</button>

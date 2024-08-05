@@ -11,6 +11,6 @@
 	<div class="description">
 		<div class="name">상품명 ${GOOD.g_name }</div>
 		<div>가격 ${GOOD.g_price }원</div>
-		<div>수량 ${GOOD.g_count }개</div>
+		<div>재고 ${GOOD.g_count }개</div>
 	</div>
 </div>

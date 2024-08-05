@@ -3,8 +3,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set value="${pageContext.request.contextPath }" var="rootPath" />
 <header>
-	<h1>로컬푸드 재고 확인 사이트</h1>
-	<p>전북 완주군 로컬푸드</p>
+	<a href="${rootPath }/">
+		<h1>로컬푸드 재고 확인 사이트</h1>
+		<p>전북 완주군 로컬푸드</p>
+	</a>
 </header>
 <nav class="main">
 	<ul>

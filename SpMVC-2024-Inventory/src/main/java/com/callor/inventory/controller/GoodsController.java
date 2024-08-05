@@ -31,9 +31,12 @@ public class GoodsController {
 	}
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public String list(Model model) {
+	public String list(String g_name, Model model) {
 		List<GoodsVO> goodsList = goodsDao.findAllGoods();
 		model.addAttribute("GOODS", goodsList);
+		if (g_name != null) {
+			model.addAttribute("G_NAME", g_name);
+		}
 		return null;
 	}
 
