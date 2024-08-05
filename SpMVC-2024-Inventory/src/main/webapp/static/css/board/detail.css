@@ -42,6 +42,13 @@ section.board.detail {
     text-align: center;
   }
 
+  div.writer.button {
+    display: flex;
+    align-items: center;
+    margin: 10px auto;
+    gap: 20px;
+  }
+
   input[type="button"],
   input[type="submit"],
   button.edit-btn {

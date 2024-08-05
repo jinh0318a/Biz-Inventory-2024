@@ -35,4 +35,5 @@
 <script src="${rootPath }/static/js/board/list.js"></script>
 <script src="${rootPath }/static/js/board/comment.js"></script>
 <script src="${rootPath }/static/js/board/input.js"></script>
+<script src="${rootPath }/static/js/board/delete.js"></script>
 </head>
