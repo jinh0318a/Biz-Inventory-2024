@@ -175,7 +175,10 @@ public class GoodsController {
 		if (manager == null) {
 			return "redirect:/manager/login-manager";
 		}
-
+		if(gCounts == null || gCodes == null) {
+			return "redirect:/goods/management";
+		}
+		
 		for (int i = 0; i < gCodes.size(); i++) {
 			String gCode = gCodes.get(i);
 			String gCount = gCounts.get(i);
