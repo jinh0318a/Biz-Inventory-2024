@@ -12,7 +12,8 @@
 			value="상품검색" />
 	</form>
 	<div class="list">
-		<form method="POST" action="${rootPath }/goods/update-all">
+		<form method="POST" action="${rootPath }/goods/update-all"
+			class="goods update-all">
 			<table class="goods list">
 				<thead>
 					<tr>
@@ -30,7 +31,7 @@
 							<td>${one.g_name }</td>
 							<td>${one.g_price }</td>
 							<td><input type="number" value="${one.g_count }"
-								name="g_count" /></td>
+								name="g_count" class="g_count"/></td>
 						</tr>
 					</c:forEach>
 				</tbody>

@@ -21,26 +21,33 @@
 				class="comment">
 				<input type="hidden" name="c_boardcode" value="${BOARD.b_code }" />
 				<div class="comment-input">
-					<textarea rows="4" cols="50" name="c_body" class="comment body"></textarea>
+					<textarea name="c_body" class="comment body"></textarea>
 					<input type="submit" value="작성" class="comment save" />
 				</div>
 			</form>
 		</c:if>
 		<c:forEach items="${COMMENTS }" var="one">
-			<div id="comment-${one.c_code}">
+			<div class="writer">
 				<span class="comment-text">${one.c_body }</span> ${one.c_writer }
 				${one.c_writed_at }
-				<div>
+				<div class="button">
 					<c:if test="${sessionScope.MANAGER.m_id == one.c_writer }">
-						<button class="edit-btn" data-code="${one.c_code}">수정</button>
-						<a href="${rootPath }/comment/delete?c_code=${one.c_code}"><input
-							type="button" value="삭제"></a>
+						<button class="btn-update" data-c_code="${one.c_code}"
+							data-b_code="${one.c_boardcode }">수정</button>
+						<button class="btn-delete" data-c_code="${one.c_code }"
+							data-b_code="${one.c_boardcode }">삭제</button>
 					</c:if>
 				</div>
 			</div>
 		</c:forEach>
 	</div>
 	<div class="list">
-		<a href="${rootPath }/board/list"><input type="button" value="목록"></a>
+		<div>
+			<a href="${rootPath }/board/input"><input type="button"
+				value="글 작성"></a>
+		</div>
+		<div>
+			<a href="${rootPath }/board/list"><input type="button" value="목록"></a>
+		</div>
 	</div>
 </section>

@@ -46,15 +46,16 @@ public class CommentController {
 	public String update(@RequestParam String c_code, @RequestParam String c_body, HttpSession session) {
 		ManagerVO manager = (ManagerVO) session.getAttribute("MANAGER");
 		if (manager == null) {
-			return "failure";
+			return "redirect:/login";
 		}
 		CommentVO comment = commentDao.findByCode(c_code);
 		if (comment == null || !comment.getC_writer().equals(manager.getM_id())) {
-			return "failure";
+			return "redirect:/login";
 		}
 		comment.setC_body(c_body);
-		boolean isUpdated = commentDao.update(comment);
-		return isUpdated ? "success" : "failure";
+		commentDao.update(comment);
+		String b_code = comment.getC_boardcode();
+		return "redirect:/board/detail?b_code=" + b_code;
 	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)

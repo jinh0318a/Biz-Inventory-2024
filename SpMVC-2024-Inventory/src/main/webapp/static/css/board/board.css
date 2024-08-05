@@ -1,0 +1,276 @@
+@charset "UTF-8";
+section.board.input {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    text-align: center;
+  }
+  form.board.input {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      resize: none;
+      height: 300px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      padding: 10px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    label {
+      margin-top: 10px;
+    }
+  }
+}
+
+section.board.update {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    text-align: center;
+  }
+  form.board.update {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      resize: none;
+      height: 300px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      padding: 10px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    label {
+      margin-top: 10px;
+    }
+  }
+}
+
+section.board.detail {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section.board.detail .list {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+section.board.detail .board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+section.board.detail .board .writer {
+  align-self: flex-end;
+  text-align: right;
+}
+
+section.board.detail .board > div {
+  margin-bottom: 20px;
+}
+
+section.board.detail .board > div:nth-child(1) {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+section.board.detail .board > div:nth-child(2) {
+  color: #666;
+  font-size: 14px;
+}
+
+section.board.detail .board > div:nth-child(3) {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+section.board.detail .writer.button {
+  display: flex;
+  align-items: center;
+  margin: 10px auto;
+  gap: 20px;
+}
+
+section.board.detail button,
+section.board.detail input[type="button"],
+section.board.detail input[type="submit"] {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+section.board.detail input[type="button"],
+section.board.detail input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+}
+
+section.board.detail input[type="button"]:hover,
+section.board.detail input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+section.board.detail form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+section.board.detail form .comment-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+section.board.detail form .comment-input textarea {
+  margin-right: 10px;
+  resize: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+section.board.detail form .comment-input input[type="submit"] {
+  flex: 1;
+  background-color: #4caf50;
+  color: white;
+}
+
+section.board.detail form .comment-input input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+section.board.detail .comment {
+  width: 100%;
+}
+
+section.board.detail .comment > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+section.board.detail .comment .comment-text {
+  flex: 1;
+}
+
+section.board.detail .button {
+  display: flex;
+  gap: 10px;
+}
+
+section.board.detail button.btn-update {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+section.board.detail button.btn-update:hover {
+  background-color: #e0a800;
+}
+
+section.board.detail button.btn-delete {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+section.board.detail button.btn-delete:hover {
+  background-color: #c82333;
+}
+
+section.board.detail .list a {
+  text-decoration: none;
+}
+
+section.board.detail .list input[type="button"] {
+  background-color: #007bff;
+  color: white;
+}
+
+section.board.detail .list input[type="button"]:hover {
+  background-color: #0056b3;
+}
