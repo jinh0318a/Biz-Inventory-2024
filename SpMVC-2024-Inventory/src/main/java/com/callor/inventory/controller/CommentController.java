@@ -16,6 +16,9 @@ import com.callor.inventory.dao.CommentDao;
 import com.callor.inventory.model.CommentVO;
 import com.callor.inventory.model.ManagerVO;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Controller
 @RequestMapping(value = "/comment")
 public class CommentController {
@@ -43,12 +46,15 @@ public class CommentController {
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
+	@ResponseBody
 	public String update(@RequestBody CommentVO commentVO, HttpSession session) {
 		ManagerVO manager = (ManagerVO) session.getAttribute("MANAGER");
 		if (manager == null) {
 			return "redirect:/login";
 		}
+		CommentVO comment = commentDao.findByCode(commentVO.getC_code());
 		commentVO.setC_writer(manager.getM_id());
+		commentVO.setC_writed_at(comment.getC_writed_at());
 		commentDao.update(commentVO);
 		String b_code = commentVO.getC_boardcode();
 		return "redirect:/board/detail?b_code=" + b_code;

@@ -44,19 +44,40 @@ document.addEventListener("DOMContentLoaded", () => {
   const onUpdateClick = (e) => {
     const btnUpdate = e.target.closest("button.btn-update");
     if (!btnUpdate) return;
-
     const commentDiv = btnUpdate.closest("div.writer");
     const commentBody = commentDiv.querySelector("span.comment-text");
 
+    const form = document.createElement("form");
+    form.classList.add("update-form");
+    form.action = `${rootPath}/comment/update`;
+    form.method = "POST";
+
+    const input_c_code = document.createElement("input");
+    input_c_code.type = "hidden";
+    input_c_code.name = "c_code";
+    input_c_code.value = btnUpdate.dataset.c_code;
+    form.appendChild(input_c_code);
+
+    const input_b_code = document.createElement("input");
+    input_b_code.type = "hidden";
+    input_b_code.name = "c_boardcode";
+    input_b_code.value = btnUpdate.dataset.b_code;
+    form.appendChild(input_b_code);
+
     const textArea = document.createElement("textarea");
+    textArea.name = "c_body";
     textArea.value = commentBody.textContent;
-    commentDiv.replaceChild(textArea, commentBody);
+    form.appendChild(textArea);
 
     const btnSave = document.createElement("button");
     btnSave.textContent = "저장";
+    btnSave.type = "submit";
+    form.appendChild(btnSave);
+
+    commentDiv.replaceChild(form, commentBody);
+
     const divButton = btnUpdate.closest("div.button");
     divButton.removeChild(btnUpdate);
-    divButton.appendChild(btnSave);
 
     const onUpdateComment = (e) => {
       e.preventDefault();
@@ -77,26 +98,31 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         body: JSON.stringify({
           c_code: commentId,
+          c_boardcode: boardId,
           c_body: updatedComment,
         }),
       };
 
       fetch(`${rootPath}/comment/update`, fetchConfig)
         .then((res) => {
-          if (res.status === 200) alert("수정 완료");
+          if (res.status === 200) {
+            alert("수정 완료");
+          } else {
+            alert("수정 실패");
+          }
           return res.text();
         })
-        .then((html) => {
+        .then(() => {
           commentBody.textContent = updatedComment;
-          commentDiv.replaceChild(commentBody, textArea);
+          commentDiv.replaceChild(commentBody, form);
 
-          divButton.removeChild(btnSave);
           divButton.appendChild(btnUpdate);
 
-          window.location.href = data.redirectUrl;
+          window.location.href = `${rootPath}/board/detail?b_code=${boardId}`;
         });
     };
-    btnSave.addEventListener("click", onUpdateComment);
+
+    form.addEventListener("submit", onUpdateComment);
   };
 
   boardDetail.addEventListener("click", (e) => {
