@@ -73,6 +73,10 @@ public class GoodsController {
 			return "redirect:/goods/list";
 		}
 
+		if (store == null) {
+			store = "0";
+		}
+
 		String findWord = "%" + word + "%";
 		List<GoodsVO> goodsList = new ArrayList<>();
 		String storename = "";
@@ -162,6 +166,9 @@ public class GoodsController {
 		if (manager == null) {
 			return "redirect:/manager/login-manager";
 		}
+		if (g_count == null || g_count.isBlank()) {
+			return "redirect:/goods/management";
+		}
 		GoodsVO good = goodsDao.findByCode(g_code);
 		goodsDao.updateGoodsCount(g_count, good.getG_code(), good.getG_storecode());
 
@@ -175,10 +182,10 @@ public class GoodsController {
 		if (manager == null) {
 			return "redirect:/manager/login-manager";
 		}
-		if(gCounts == null || gCodes == null) {
+		if (gCounts == null || gCodes == null) {
 			return "redirect:/goods/management";
 		}
-		
+
 		for (int i = 0; i < gCodes.size(); i++) {
 			String gCode = gCodes.get(i);
 			String gCount = gCounts.get(i);

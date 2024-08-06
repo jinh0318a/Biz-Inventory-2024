@@ -9,6 +9,7 @@
 			title="상품사진" />
 	</div>
 	<div class="description">
+		<div>판매매장 ${GOOD.g_storename }</div>
 		<div class="name">상품명 ${GOOD.g_name }</div>
 		<div>가격 ${GOOD.g_price }원</div>
 		<div>재고 ${GOOD.g_count }개</div>

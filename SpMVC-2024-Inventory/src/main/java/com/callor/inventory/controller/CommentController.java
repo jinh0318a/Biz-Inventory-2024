@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,19 +43,14 @@ public class CommentController {
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
-	@ResponseBody
-	public String update(@RequestParam String c_code, @RequestParam String c_body, HttpSession session) {
+	public String update(@RequestBody CommentVO commentVO, HttpSession session) {
 		ManagerVO manager = (ManagerVO) session.getAttribute("MANAGER");
 		if (manager == null) {
 			return "redirect:/login";
 		}
-		CommentVO comment = commentDao.findByCode(c_code);
-		if (comment == null || !comment.getC_writer().equals(manager.getM_id())) {
-			return "redirect:/login";
-		}
-		comment.setC_body(c_body);
-		commentDao.update(comment);
-		String b_code = comment.getC_boardcode();
+		commentVO.setC_writer(manager.getM_id());
+		commentDao.update(commentVO);
+		String b_code = commentVO.getC_boardcode();
 		return "redirect:/board/detail?b_code=" + b_code;
 	}
 

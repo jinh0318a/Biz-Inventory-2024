@@ -17,4 +17,5 @@ public class GoodsVO {
 	private String g_name;
 	private String g_price;
 	private String g_count;
+	private String g_storename;
 }
