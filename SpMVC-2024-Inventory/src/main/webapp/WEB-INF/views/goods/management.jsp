@@ -11,10 +11,6 @@
 			placeholder="검색하실 상품을 입력하세요" /> <input type="submit" class="button"
 			value="상품검색" />
 	</form>
-	<div class="goods insert">
-		<a href="${rootPath }/goods/insert"><input type="button"
-			class="insert" value="상품등록" /></a>
-	</div>
 	<div class="list">
 		<form method="POST" action="${rootPath }/goods/update-all"
 			class="goods update-all">
@@ -40,8 +36,10 @@
 					</c:forEach>
 				</tbody>
 			</table>
-			<div>
+			<div class="management">
 				<button type="submit" class="button">전체 수정</button>
+				<a href="${rootPath }/goods/insert"><input type="button"
+					class="insert" value="상품등록" /></a>
 			</div>
 		</form>
 		<article class="detail"></article>

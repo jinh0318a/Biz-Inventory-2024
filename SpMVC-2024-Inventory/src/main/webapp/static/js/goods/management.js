@@ -26,3 +26,39 @@ document.addEventListener("DOMContentLoaded", () => {
   management_form.addEventListener("submit", onSubmit);
   detail_form.addEventListener("submit", onSubmit);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const insert_section = document.querySelector("section.goods.insert");
+  const insert_form = insert_section.querySelector("form.goods.insert");
+  const btn_insert = insert_form.querySelector("button.insert");
+
+  const onInsertHandler = (e) => {
+    const input_g_name = insert_form.querySelector("input.g_name");
+    const input_g_price = insert_form.querySelector("input.g_price");
+
+    if (!input_g_name.value) {
+      alert("상품명을 입력해주세요");
+      input_g_name.select();
+      e.preventDefault();
+      return false;
+    }
+
+    if (!input_g_price.value) {
+      alert("가격을 입력해주세요");
+      input_g_price.select();
+      e.preventDefault();
+      return false;
+    }
+
+    if (isNaN(input_g_price.value) || input_g_price.value <= 0) {
+      alert("가격은 0이상 숫자만 입력해주세요");
+      input_g_price.select();
+      e.preventDefault();
+      return false;
+    }
+
+    return true;
+  };
+
+  btn_insert.addEventListener("click", onInsertHandler);
+});

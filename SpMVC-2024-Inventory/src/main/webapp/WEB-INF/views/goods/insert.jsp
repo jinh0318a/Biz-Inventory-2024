@@ -5,20 +5,20 @@
 <section class="goods insert">
 	<div>
 		<h1>상품 등록</h1>
-		<p>매장코드는 관리자 매장코드</p>
-		<p>상품코드는 자동으로 등록</p>
-		<p>초기수량은 0으로 설정</p>
+		<h3>주의사항</h3>
+		<p>상품코드는 자동으로 등록됩니다.</p>
+		<p>초기수량은 0으로 설정됩니다.</p>
 	</div>
 
 	<form method="post" class="goods insert">
 		<div>
-			상품명<input type="text" name="g_name" />
+			상품명<input type="text" name="g_name" class="g_name" />
 		</div>
 		<div>
-			가격 <input type="text" name="g_price" />
+			가격 <input type="number" name="g_price" class="g_price" />
 		</div>
 		<div>
-			<button type="submit">상품등록</button>
+			<button type="submit" class="insert">상품등록</button>
 		</div>
 	</form>
 </section>

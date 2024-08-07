@@ -178,3 +178,17 @@ input.board.input {
     color: white;
   }
 }
+
+div.management {
+  input {
+    padding: 8px 10px;
+    background-color: #aaa;
+    border: 0;
+    border-radius: 10px;
+    margin-left: 50px;
+    &:hover {
+      background-color: blue;
+      color: white;
+    }
+  }
+}

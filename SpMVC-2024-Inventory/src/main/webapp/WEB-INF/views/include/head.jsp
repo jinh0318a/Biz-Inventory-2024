@@ -12,6 +12,7 @@
 	rel="stylesheet">
 <link href="${rootPath }/static/css/store/list.css" rel="stylesheet">
 <link href="${rootPath }/static/css/goods/list.css" rel="stylesheet">
+<link href="${rootPath }/static/css/goods/insert.css" rel="stylesheet">
 <link href="${rootPath }/static/css/board/board.css" rel="stylesheet">
 <link href="${rootPath }/static/css/board/comment.css" rel="stylesheet">
 <script>
