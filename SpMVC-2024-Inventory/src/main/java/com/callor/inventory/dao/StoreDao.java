@@ -13,5 +13,5 @@ public interface StoreDao {
 
 	@Select("select * from tbl_store where s_code=#{s_code}")
 	public StoreVO findByCode(String s_code);
-
+	
 }

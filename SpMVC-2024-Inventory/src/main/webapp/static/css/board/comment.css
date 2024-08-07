@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+form.update-comment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 10px;
+}
+
+textarea.update-comment {
+  width: 50%;
+  resize: none;
+}
+
+button.update-comment {
+  background-color: blue;
+  color: white;
+}

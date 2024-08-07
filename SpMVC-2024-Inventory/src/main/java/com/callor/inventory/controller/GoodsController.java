@@ -202,4 +202,44 @@ public class GoodsController {
 		return "redirect:/goods/management";
 	}
 
+	@RequestMapping(value = "/insert", method = RequestMethod.GET)
+	public String insert(HttpSession session) {
+		ManagerVO manager = (ManagerVO) session.getAttribute("MANAGER");
+		if (manager == null) {
+			return "redirect:/manager/login-manager";
+		}
+
+		return null;
+	}
+
+	@RequestMapping(value = "/insert", method = RequestMethod.POST)
+	public String insert(String g_name, String g_price, HttpSession session) {
+		ManagerVO manager = (ManagerVO) session.getAttribute("MANAGER");
+		if (manager == null) {
+			return "redirect:/manager/login-manager";
+		}
+
+		String storecode = manager.getM_storecode();
+		StoreVO store = storeDao.findByCode(storecode);
+
+		GoodsVO goodsVO = new GoodsVO();
+		String lastCode = goodsDao.findLastGCode();
+		String lastCodeNumber = lastCode.substring(1);
+		int lastNumber = Integer.parseInt(lastCodeNumber);
+		int newNumber = lastNumber + 1;
+		String formattedNumber = String.format("%05d", newNumber);
+		String g_Code = "G" + formattedNumber;
+
+		goodsVO.setG_code(g_Code);
+		goodsVO.setG_storecode(store.getS_code());
+		goodsVO.setG_storename(store.getS_name());
+		goodsVO.setG_count("0");
+		goodsVO.setG_name(g_name);
+		goodsVO.setG_price(g_price);
+
+		goodsDao.insertGoods(goodsVO);
+		goodsDao.insertInventory(goodsVO);
+		return "redirect:/goods/management";
+	}
+
 }

@@ -2,6 +2,7 @@ package com.callor.inventory.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -29,5 +30,14 @@ public interface GoodsDao {
 
 	@Select("select * from view_goods where g_storecode=#{param1} and (g_name like #{param2} or g_code like #{param2})")
 	public List<GoodsVO> searchByWordOrCode(String g_storecode, String word);
+
+	@Insert("insert into tbl_goods(g_code, g_name, g_price) values (#{g_code},#{g_name},#{g_price})")
+	public int insertGoods(GoodsVO goodsVO);
+
+	@Insert("insert into tbl_inventory(i_goodscode, i_storecode, i_count) values (#{g_code},#{g_storecode},#{g_count})")
+	public int insertInventory(GoodsVO goodsVO);
+
+	@Select("SELECT g_code FROM tbl_goods ORDER BY g_code DESC LIMIT 1")
+	public String findLastGCode();
 
 }

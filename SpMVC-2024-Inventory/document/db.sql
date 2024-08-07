@@ -57,7 +57,8 @@ create table tbl_comment(
     foreign key (c_writer) references tbl_manager(m_id),
     foreign key (c_boardcode) references tbl_board(b_code)
 );
-select * from tbl_board;
+select * from tbl_board;	
+select * from tbl_comment;
 
 drop table tbl_comment;
 drop table tbl_board;
@@ -78,15 +79,30 @@ delete from tbl_user where u_id='';
 create view view_goods
 as
 (
-select g_code, s_code as g_storecode, g_name, g_price ,i_count as g_count 
+select g_code, s_code as g_storecode, g_name, g_price ,i_count as g_count , s_name as g_storename
 from tbl_store as s join tbl_inventory as i on s.s_code = i.i_storecode 
 join tbl_goods as g on g_code = i.i_goodscode
 );
 drop view view_goods;
-select * from view_goods where g_code='G01179';
+select * from tbl_inventory where i_storecode='S00005';
+select count(*) from tbl_inventory where i_storecode='S00005';
 
-select * from view_goods where g_storecode='S00005';
+
+select count(*) from tbl_inventory;
+select count(*) from tbl_goods;
+select count(*) from view_goods;
+select * from view_goods	;
+
+select * from view_goods where g_storecode='S00004';
+select * from view_goods where g_name='핸드폰';
 
 select * from tbl_inventory where i_storecode='S00005';
 
+-- g_code 는 count(*) + 1 로 설정되게 --
+insert into tbl_goods(g_code, g_name, g_price) values ('G00001','상품명','가격');
 insert into tbl_inventory(i_goodscode, i_storecode, i_count) values ('G00001','S00005',2);
+
+delete from tbl_inventory where i_storecode='S00002' and i_count='0';
+delete from tbl_goods where g_code="";
+select * from tbl_goods where g_name = '핸드폰';
+select * from tbl_inventory where i_storecode='S00002' and i_count='0';

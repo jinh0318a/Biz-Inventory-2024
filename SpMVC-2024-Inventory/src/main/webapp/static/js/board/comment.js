@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const commentBody = commentDiv.querySelector("span.comment-text");
 
     const form = document.createElement("form");
-    form.classList.add("update-form");
+    form.classList.add("update-comment");
     form.action = `${rootPath}/comment/update`;
     form.method = "POST";
 
@@ -65,11 +65,13 @@ document.addEventListener("DOMContentLoaded", () => {
     form.appendChild(input_b_code);
 
     const textArea = document.createElement("textarea");
+    textArea.classList.add("update-comment");
     textArea.name = "c_body";
     textArea.value = commentBody.textContent;
     form.appendChild(textArea);
 
     const btnSave = document.createElement("button");
+    btnSave.classList.add("update-comment");
     btnSave.textContent = "저장";
     btnSave.type = "submit";
     form.appendChild(btnSave);
@@ -78,51 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const divButton = btnUpdate.closest("div.button");
     divButton.removeChild(btnUpdate);
-
-    const onUpdateComment = (e) => {
-      e.preventDefault();
-      const commentId = btnUpdate.dataset.c_code;
-      const boardId = btnUpdate.dataset.b_code;
-
-      const updatedComment = textArea.value.trim();
-
-      if (updatedComment === "") {
-        alert("댓글 내용을 입력해주세요.");
-        return;
-      }
-
-      const fetchConfig = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          c_code: commentId,
-          c_boardcode: boardId,
-          c_body: updatedComment,
-        }),
-      };
-
-      fetch(`${rootPath}/comment/update`, fetchConfig)
-        .then((res) => {
-          if (res.status === 200) {
-            alert("수정 완료");
-          } else {
-            alert("수정 실패");
-          }
-          return res.text();
-        })
-        .then(() => {
-          commentBody.textContent = updatedComment;
-          commentDiv.replaceChild(commentBody, form);
-
-          divButton.appendChild(btnUpdate);
-
-          window.location.href = `${rootPath}/board/detail?b_code=${boardId}`;
-        });
-    };
-
-    form.addEventListener("submit", onUpdateComment);
   };
 
   boardDetail.addEventListener("click", (e) => {

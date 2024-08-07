@@ -1,9 +1,8 @@
 INDEX VERSION 1.4+C:\Users\KMS203\Documents\workspace\inventory-project\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
 1581065068.index
-1128270969.index
-1128270969.index
 1538176250.index
 1920852086.index
+2666838072.index
 1017473890.index
 2577939053.index
 3467834818.index

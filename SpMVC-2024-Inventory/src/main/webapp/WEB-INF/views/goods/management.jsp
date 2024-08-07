@@ -11,6 +11,10 @@
 			placeholder="검색하실 상품을 입력하세요" /> <input type="submit" class="button"
 			value="상품검색" />
 	</form>
+	<div class="goods insert">
+		<a href="${rootPath }/goods/insert"><input type="button"
+			class="insert" value="상품등록" /></a>
+	</div>
 	<div class="list">
 		<form method="POST" action="${rootPath }/goods/update-all"
 			class="goods update-all">
@@ -31,7 +35,7 @@
 							<td>${one.g_name }</td>
 							<td>${one.g_price }</td>
 							<td><input type="number" value="${one.g_count }"
-								name="g_count" class="g_count"/></td>
+								name="g_count" class="g_count" /></td>
 						</tr>
 					</c:forEach>
 				</tbody>

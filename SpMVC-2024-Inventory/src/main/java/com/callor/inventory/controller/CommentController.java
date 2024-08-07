@@ -46,13 +46,15 @@ public class CommentController {
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
-	@ResponseBody
-	public String update(@RequestBody CommentVO commentVO, HttpSession session) {
+	public String update(CommentVO commentVO, HttpSession session) {
 		ManagerVO manager = (ManagerVO) session.getAttribute("MANAGER");
 		if (manager == null) {
 			return "redirect:/login";
 		}
 		CommentVO comment = commentDao.findByCode(commentVO.getC_code());
+		if (commentVO.getC_body() == null) {
+			commentVO.setC_body(comment.getC_body());
+		}
 		commentVO.setC_writer(manager.getM_id());
 		commentVO.setC_writed_at(comment.getC_writed_at());
 		commentDao.update(commentVO);

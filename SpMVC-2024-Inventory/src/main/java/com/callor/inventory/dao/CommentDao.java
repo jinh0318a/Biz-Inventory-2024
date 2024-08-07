@@ -17,7 +17,7 @@ public interface CommentDao {
 	@Delete("delete from tbl_comment where c_code=#{c_code}")
 	public int delete(String c_code);
 
-	@Update("update tbl_comment set c_body=#{c_body} where c_code=#{c_code}F")
+	@Update("update tbl_comment set c_body=#{c_body} where c_code=#{c_code}")
 	public boolean update(CommentVO commentVO);
 
 	@Select("select * from tbl_comment where c_writer=#{u_id}")
