@@ -5,11 +5,12 @@
 <section class="goods insert">
 	<div>
 		<h1>상품 등록</h1>
-		<p>상품코드는 자동으로 등록되며</p>
-		<p>초기수량은 0으로 설정됩니다.</p>
+		<p>매장코드는 관리자 매장코드</p>
+		<p>상품코드는 자동으로 등록</p>
+		<p>초기수량은 0으로 설정</p>
 	</div>
 
-	<form method="post">
+	<form method="post" class="goods insert">
 		<div>
 			상품명<input type="text" name="g_name" />
 		</div>
