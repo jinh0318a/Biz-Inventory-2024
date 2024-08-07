@@ -3,7 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set value="${pageContext.request.contextPath }" var="rootPath" />
 <div>
-	<img class="store picture"
-		src="${rootPath }/static/image/picture-2008484_1280.png" alt="매장사진"
-		title="매장사진" /> <span class="name">${STORE.s_name }</span><span>${STORE.s_addr }</span>
+	<iframe src="${MAP }" width="600" height="450" style="border: 0;"
+		allowfullscreen="" loading="lazy"
+		referrerpolicy="no-referrer-when-downgrade"></iframe>
+	<span class="name">${STORE.s_name }</span><span>${STORE.s_addr }</span>
 </div>
