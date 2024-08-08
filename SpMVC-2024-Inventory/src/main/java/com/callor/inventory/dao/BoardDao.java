@@ -35,4 +35,7 @@ public interface BoardDao {
 	@Delete("delete from tbl_board where b_writer=#{b_writer}")
 	public int deleteUser(String b_writer);
 
+	@Select("select * from tbl_board where b_title like #{param1} or b_body like #{param1} or b_writer like #{param1}")
+	public List<BoardVO> findByWord(String word);
+
 }

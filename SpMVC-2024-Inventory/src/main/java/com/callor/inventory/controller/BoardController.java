@@ -107,4 +107,13 @@ public class BoardController {
 
 		return "redirect:/board/list";
 	}
+
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public String search(String word, Model model) {
+		String findWord = "%" + word + "%";
+		List<BoardVO> boardList = boardDao.findByWord(findWord);
+		model.addAttribute("WORD", word);
+		model.addAttribute("BOARDS", boardList);
+		return null;
+	}
 }

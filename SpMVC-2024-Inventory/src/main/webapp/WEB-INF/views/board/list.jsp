@@ -6,6 +6,11 @@
 	<div>
 		<h2>전체 글 목록</h2>
 	</div>
+	<form class="search" action="${rootPath }/board/search">
+		<input type="text" class="search" name="word"
+			placeholder="검색하실 단어을 입력하세요" /> <input type="submit" class="button"
+			value="검색" />
+	</form>
 	<div class="list">
 		<table class="board list">
 			<thead>
@@ -26,8 +31,8 @@
 			</tbody>
 		</table>
 		<div>
-			<a href="${rootPath }/board/input"><input type="button" class="board input"
-				value="글작성" /></a>
+			<a href="${rootPath }/board/input"><input type="button"
+				class="board input" value="글작성" /></a>
 		</div>
 	</div>
 </section>
