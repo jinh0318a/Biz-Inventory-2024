@@ -1,8 +1,9 @@
+// 상품 수정
 document.addEventListener("DOMContentLoaded", () => {
   const section = document.querySelector("section.goods.list");
   const management_form = section.querySelector("form.update-all");
   const detail_form = section.querySelector("article.detail form.detail");
-
+  const btn_delete = document.querySelector("input.delete");
   const onSubmit = (e) => {
     const input_all = management_form.querySelectorAll("input.g_count");
     for (let input of input_all) {
@@ -14,7 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    const input_detail = detail_form.querySelector("div.count input.g_count");
+    const input_detail = detail_form
+      .querySelector("div.info")
+      .querySelector("div.count")
+      .querySelector("input.g_count");
     if (!input_detail.value.trim()) {
       alert("값을 입력해주세요.");
       input_detail.focus();
@@ -23,10 +27,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  const onDelete = (e) => {
+    const confirmation = confirm("정말로 삭제하시겠습니까?");
+    if (!confirmation) {
+      e.preventDefault();
+      return false;
+    }
+  };
+
   management_form.addEventListener("submit", onSubmit);
   detail_form.addEventListener("submit", onSubmit);
+  btn_delete.addEventListener("click", onDelete);
 });
 
+// 상품 등록
 document.addEventListener("DOMContentLoaded", () => {
   const insert_section = document.querySelector("section.goods.insert");
   const insert_form = insert_section.querySelector("form.goods.insert");

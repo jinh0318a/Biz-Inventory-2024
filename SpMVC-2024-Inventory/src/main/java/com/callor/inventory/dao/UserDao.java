@@ -14,6 +14,6 @@ public interface UserDao {
 
 	public int update(UserVO userVO);
 
-	@Delete("delete from tbl_user where u_id=#{id}")
-	public void delete(String id);
+	@Delete("delete from tbl_user where u_id=#{u_id}")
+	public void delete(String u_id);
 }

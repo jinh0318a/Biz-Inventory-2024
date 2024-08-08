@@ -274,3 +274,15 @@ section.board.detail .list input[type="button"] {
 section.board.detail .list input[type="button"]:hover {
   background-color: #0056b3;
 }
+
+.delete {
+  padding: 8px 10px;
+  background-color: #aaa;
+  border-radius: 10px;
+  border: none;
+
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}

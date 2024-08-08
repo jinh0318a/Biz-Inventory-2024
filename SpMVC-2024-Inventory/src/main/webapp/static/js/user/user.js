@@ -118,6 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const modify_inputs = modify_form?.querySelectorAll("input");
   const error_inputs = modify_form?.querySelectorAll("span");
+  const btn_delete = document.querySelector("input.delete");
 
   const emptyValid = (index) => {
     const text = modify_inputs[index].value;
@@ -152,4 +153,14 @@ document.addEventListener("DOMContentLoaded", () => {
     "click",
     onmodifySubmit
   );
+
+  const onDelete = (e) => {
+    const confirmation = confirm("정말로 탈퇴하시겠습니까?");
+    if (!confirmation) {
+      e.preventDefault();
+      return false;
+    }
+  };
+
+  btn_delete.addEventListener("click", onDelete);
 });

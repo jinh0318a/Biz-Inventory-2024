@@ -12,6 +12,7 @@ const ERROR_MESSAGE_MANAGER = [
   "* 매장코드는 반드시 입력하세요",
 ];
 
+// 회원가입
 document.addEventListener("DOMContentLoaded", () => {
   const join_form = document.querySelector("form.join.manager");
 
@@ -63,6 +64,7 @@ const ERROR_MESSAGE_MANAGER_LOGIN = [
   "* 비밀번호는 반드시 입력하세요",
 ];
 
+// 로그인
 document.addEventListener("DOMContentLoaded", () => {
   const login_form = document.querySelector("form.login.manager");
 
@@ -112,15 +114,16 @@ const INPUT_INDEX_MANAGER_MODIFY = {
 };
 const ERROR_MESSAGE_MANAGER_MODIFY = [
   "* 비밀번호는 반드시 입력하세요",
-  "* 닉네임은 반드시 입력하세요",
   "* 이메일은 반드시 입력하세요",
+  "* 매장코드는 반드시 입력하세요",
 ];
 
+// 정보수정
 document.addEventListener("DOMContentLoaded", () => {
   const modify_form = document.querySelector("form.modify.manager");
-
   const modify_inputs = modify_form?.querySelectorAll("input");
   const error_inputs = modify_form?.querySelectorAll("span");
+  const btn_delete = document.querySelector("input.delete");
 
   const emptyValid = (index) => {
     const text = modify_inputs[index].value;
@@ -155,4 +158,14 @@ document.addEventListener("DOMContentLoaded", () => {
     "click",
     onmodifySubmit
   );
+
+  const onDelete = (e) => {
+    const confirmation = confirm("정말로 탈퇴하시겠습니까?");
+    if (!confirmation) {
+      e.preventDefault();
+      return false;
+    }
+  };
+
+  btn_delete.addEventListener("click", onDelete);
 });

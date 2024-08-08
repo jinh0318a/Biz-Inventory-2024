@@ -1,5 +1,7 @@
 package com.callor.inventory.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -7,7 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.callor.inventory.dao.BoardDao;
+import com.callor.inventory.dao.CommentDao;
 import com.callor.inventory.dao.UserDao;
+import com.callor.inventory.model.BoardVO;
 import com.callor.inventory.model.UserVO;
 
 @RequestMapping(value = "/user")
@@ -15,10 +20,14 @@ import com.callor.inventory.model.UserVO;
 public class UserController {
 
 	private final UserDao userDao;
+	private final BoardDao boardDao;
+	private final CommentDao commentDao;
 
-	public UserController(UserDao userDao) {
+	public UserController(UserDao userDao, BoardDao boardDao, CommentDao commentDao) {
 		super();
 		this.userDao = userDao;
+		this.boardDao = boardDao;
+		this.commentDao = commentDao;
 	}
 
 	@RequestMapping(value = "/login-user", method = RequestMethod.GET)
@@ -70,4 +79,16 @@ public class UserController {
 		return "redirect:/";
 	}
 
+	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+	public String delete(HttpSession session) {
+		UserVO authUser = (UserVO) session.getAttribute("USER");
+		List<BoardVO> boardId = boardDao.findByUserID(authUser.getU_id());
+		for (BoardVO one : boardId) {
+			commentDao.deleteBoard(one.getB_code());
+		}
+		boardDao.deleteUser(authUser.getU_id());
+		userDao.delete(authUser.getU_id());
+		session.invalidate();
+		return "redirect:/";
+	}
 }

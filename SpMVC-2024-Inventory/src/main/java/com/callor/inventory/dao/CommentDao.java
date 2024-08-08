@@ -20,15 +20,15 @@ public interface CommentDao {
 	@Update("update tbl_comment set c_body=#{c_body} where c_code=#{c_code}")
 	public boolean update(CommentVO commentVO);
 
-	@Select("select * from tbl_comment where c_writer=#{u_id}")
-	public List<CommentVO> findByUserID(String u_id);
-
-	@Select("select * from tbl_comment where c_writer=#{m_id}")
-	public List<CommentVO> findByManagerID(String m_id);
-
 	@Insert("insert into tbl_comment(c_body, c_writer, c_writed_at, c_boardcode) values(#{c_body},#{c_writer},#{c_writed_at},#{c_boardcode})")
 	public int insert(CommentVO commentVO);
 
 	@Select("select * from tbl_comment where c_code=#{c_code}")
 	public CommentVO findByCode(String c_code);
+
+	@Delete("delete from tbl_comment where c_writer=#{m_id}")
+	public int deleteManager(String m_id);
+
+	@Delete("delete from tbl_comment where c_boardcode=#{c_boardcode}")
+	public int deleteBoard(String c_boardcode);
 }

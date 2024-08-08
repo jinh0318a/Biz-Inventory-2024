@@ -242,4 +242,15 @@ public class GoodsController {
 		return "redirect:/goods/management";
 	}
 
+	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+	public String delete(String g_code, HttpSession session) {
+		ManagerVO manager = (ManagerVO) session.getAttribute("MANAGER");
+		if (manager == null) {
+			return "redirect:/manager/login-manager";
+		}
+		goodsDao.deleteGoodFromInventory(g_code, manager.getM_storecode());
+		goodsDao.deleteGoodFromGoods(g_code);
+		return "redirect:/goods/management";
+	}
+
 }

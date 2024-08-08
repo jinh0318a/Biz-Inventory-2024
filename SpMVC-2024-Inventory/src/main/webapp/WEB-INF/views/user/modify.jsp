@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set value="${pageContext.request.contextPath }" var="rootPath" />
 <section class="modify user">
 	<h1>회원 정보 수정</h1>
 	<form method="post" class="modify user">
@@ -19,7 +21,9 @@
 				value="${USER.u_email }" /><span>*</span>
 		</div>
 		<div>
-			<input type="button" class="button" value="정보수정" />
+			<input type="button" class="button" value="정보수정" /><a
+				href="${rootPath }/user/delete"><input type="button"
+				value="회원탈퇴" class="delete"/></a>
 		</div>
 	</form>
 </section>

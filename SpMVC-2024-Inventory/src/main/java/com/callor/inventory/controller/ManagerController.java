@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.callor.inventory.dao.CommentDao;
 import com.callor.inventory.dao.ManagerDao;
 import com.callor.inventory.model.ManagerVO;
 
@@ -15,10 +16,12 @@ import com.callor.inventory.model.ManagerVO;
 public class ManagerController {
 
 	private final ManagerDao managerDao;
+	private final CommentDao commentDao;
 
-	public ManagerController(ManagerDao managerDao) {
+	public ManagerController(ManagerDao managerDao, CommentDao commentDao) {
 		super();
 		this.managerDao = managerDao;
+		this.commentDao = commentDao;
 	}
 
 	@RequestMapping(value = "/join-manager", method = RequestMethod.GET)
@@ -66,4 +69,12 @@ public class ManagerController {
 		return "redirect:/";
 	}
 
+	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+	public String delete(HttpSession session) {
+		ManagerVO authUser = (ManagerVO) session.getAttribute("MANAGER");
+		commentDao.deleteManager(authUser.getM_id());
+		managerDao.delete(authUser.getM_id());
+		session.invalidate();
+		return "redirect:/";
+	}
 }

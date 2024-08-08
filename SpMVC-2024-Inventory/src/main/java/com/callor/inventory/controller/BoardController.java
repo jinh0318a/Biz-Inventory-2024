@@ -102,6 +102,7 @@ public class BoardController {
 		if (user == null) {
 			return "redirect:/user/login-user";
 		}
+		commentDao.deleteBoard(b_code);
 		boardDao.delete(b_code);
 
 		return "redirect:/board/list";

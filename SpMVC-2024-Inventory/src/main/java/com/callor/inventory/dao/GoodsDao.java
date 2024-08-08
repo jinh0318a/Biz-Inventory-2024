@@ -2,6 +2,7 @@ package com.callor.inventory.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -39,5 +40,11 @@ public interface GoodsDao {
 
 	@Select("SELECT g_code FROM tbl_goods ORDER BY g_code DESC LIMIT 1")
 	public String findLastGCode();
+
+	@Delete("delete from tbl_goods where g_code=#{g_code}")
+	public int deleteGoodFromGoods(String g_code);
+
+	@Delete("delete from tbl_inventory where i_goodscode=#{param1} and i_storecode=#{param2}")
+	public int deleteGoodFromInventory(String g_code, String storecode);
 
 }

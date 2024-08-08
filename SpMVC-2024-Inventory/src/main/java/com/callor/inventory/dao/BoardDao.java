@@ -32,4 +32,7 @@ public interface BoardDao {
 	@Insert("insert into tbl_board(b_title, b_body, b_writer, b_writed_at) values(#{b_title},#{b_body},#{b_writer},#{b_writed_at})")
 	public int insert(BoardVO boardVO);
 
+	@Delete("delete from tbl_board where b_writer=#{b_writer}")
+	public int deleteUser(String b_writer);
+
 }
