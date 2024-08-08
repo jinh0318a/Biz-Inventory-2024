@@ -12,5 +12,5 @@ document.addEventListener("DOMContentLoaded", () => {
       detail_box.innerHTML = html;
     }
   };
-  goods_list.addEventListener("click", onClickHandelr);
+  goods_list?.addEventListener("click", onClickHandelr);
 });

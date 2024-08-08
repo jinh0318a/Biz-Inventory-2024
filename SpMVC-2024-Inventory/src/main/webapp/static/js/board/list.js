@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const input_form = document.querySelector("section.board.input");
-  const btn_save = input_form.querySelector("input.btn-save");
+  const btn_save = input_form?.querySelector("input.btn-save");
   const onSaveBoard = (event) => {
-    const input_title = input_form.querySelector("input.board.title");
-    const input_body = input_form.querySelector("textarea.board.body");
+    const input_title = input_form?.querySelector("input.board.title");
+    const input_body = input_form?.querySelector("textarea.board.body");
 
     if (!input_title.value) {
       alert("제목을 입력하세요");
@@ -37,15 +37,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  btn_save.addEventListener("click", onSaveBoard);
+  btn_save?.addEventListener("click", onSaveBoard);
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   const input_form = document.querySelector("section.board.update");
-  const btn_save = input_form.querySelector("input.btn-save");
+  const btn_save = input_form?.querySelector("input.btn-save");
   const onSaveBoard = (event) => {
-    const input_title = input_form.querySelector("input.board.title");
-    const input_body = input_form.querySelector("textarea.board.body");
+    const input_title = input_form?.querySelector("input.board.title");
+    const input_body = input_form?.querySelector("textarea.board.body");
 
     if (!input_title.value) {
       alert("제목을 입력하세요");
@@ -62,12 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  btn_save.addEventListener("click", onSaveBoard);
+  btn_save?.addEventListener("click", onSaveBoard);
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   const board_detail = document.querySelector("section.board.detail");
-  const btn_delete = board_detail.querySelector("input.board.delete");
+  const btn_delete = board_detail?.querySelector("input.board.delete");
 
   const onDelete = async (e) => {
     const b_code = e.target.closest("DIV").dataset.b_code;
@@ -83,5 +83,5 @@ document.addEventListener("DOMContentLoaded", () => {
     alert("삭제를 완료했습니다.");
   };
 
-  btn_delete.addEventListener("click", onDelete);
+  btn_delete?.addEventListener("click", onDelete);
 });

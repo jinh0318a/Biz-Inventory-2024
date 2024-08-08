@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const boardDetail = document.querySelector("section.board.detail");
-  const commentForm = boardDetail.querySelector("div.comment form.comment");
-  const commentDiv = commentForm.querySelector("div.comment-input");
-  const btnComment = commentDiv.querySelector("input.comment.save");
+  const commentForm = boardDetail?.querySelector("div.comment form.comment");
+  const commentDiv = commentForm?.querySelector("div.comment-input");
+  const btnComment = commentDiv?.querySelector("input.comment.save");
 
   const onSaveComment = (event) => {
     const inputComment = commentDiv.querySelector("textarea.comment.body");
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  btnComment.addEventListener("click", onSaveComment);
+  btnComment?.addEventListener("click", onSaveComment);
 
   const onDeleteComment = async (e) => {
     const btnDelete = e.target.closest("button.btn-delete");
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     alert("삭제를 완료했습니다.");
   };
 
-  boardDetail.addEventListener("click", (e) => {
+  boardDetail?.addEventListener("click", (e) => {
     if (e.target.matches("button.btn-delete")) {
       onDeleteComment(e);
     }
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     divButton.removeChild(btnUpdate);
   };
 
-  boardDetail.addEventListener("click", (e) => {
+  boardDetail?.addEventListener("click", (e) => {
     if (e.target.matches("button.btn-update")) {
       onUpdateClick(e);
     }

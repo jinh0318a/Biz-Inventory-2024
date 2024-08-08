@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   const store_list = document.querySelector("section.store.list");
-
-  const select_store = store_list.querySelector("span.name");
   let s_code;
 
   const onClickHandler = async () => {
@@ -11,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     subBox.innerHTML = html;
   };
 
-  store_list.addEventListener("click", (e) => {
+  store_list?.addEventListener("click", (e) => {
     const target = e.target;
     if (target.tagName === "SPAN") {
       const div = target.closest("DIV");
