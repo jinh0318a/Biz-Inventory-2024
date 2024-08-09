@@ -3,8 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const section = document.querySelector("section.goods.list");
   const management_form = section?.querySelector("form.update-all");
   const detail_form = section?.querySelector("article.detail form.detail");
-  const btn_delete = document.querySelector("input.delete");
+  const btn_delete = document.querySelector("#deleteButton");
+  const btn_update = document.querySelector("#updateButton");
   const onSubmit = (e) => {
+    // 상품 전체 재고 수정
     const input_all = management_form?.querySelectorAll("input.g_count");
     for (let input of input_all) {
       if (!input.value.trim()) {
@@ -14,7 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
         return false;
       }
     }
+  };
 
+  // 상품 재고 수정
+  const onUpdate = async () => {
     const input_detail = detail_form
       .querySelector("div.info")
       .querySelector("div.count")
@@ -27,7 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  const onDelete = (e) => {
+  // 상품 삭제
+  const onDelete = async () => {
     const confirmation = confirm("정말로 삭제하시겠습니까?");
     if (!confirmation) {
       e.preventDefault();
@@ -38,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   management_form?.addEventListener("submit", onSubmit);
   detail_form?.addEventListener("submit", onSubmit);
   btn_delete?.addEventListener("click", onDelete);
+  btn_update?.addEventListener("click", onUpdate);
 });
 
 // 상품 등록

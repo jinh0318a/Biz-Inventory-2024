@@ -19,9 +19,9 @@
 					class="g_count" />개
 			</div>
 			<div>
-				<button type="submit" class="button">재고 수정</button>
+				<button type="submit" class="button update" id="updateButton">재고 수정</button>
 				<a href="${rootPath }/goods/delete?g_code=${GOOD.g_code}"><input
-					type="button" value="삭제" class="delete" /></a>
+					type="button" value="삭제" class="delete" id="deleteButton"/></a>
 			</div>
 		</div>
 	</form>
