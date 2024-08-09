@@ -52,4 +52,9 @@ public class HomeController {
 		return "redirect:/";
 	}
 
+	@RequestMapping(value = "/detail/popup", method = RequestMethod.GET)
+	public String popup() {
+		return null;
+	}
+
 }

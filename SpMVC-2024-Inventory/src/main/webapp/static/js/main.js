@@ -25,7 +25,33 @@ document.addEventListener("DOMContentLoaded", () => {
         currentIndex = 0;
       }, 600);
     }
+
+    if (currentIndex === 0) {
+      showPopup();
+    }
   }
+
+  function openPopup() {
+    const popupUrl = `${rootPath}/detail/popup`;
+    window.open(popupUrl, "popupWindow", "width=600,height=800,scrollbars=yes");
+  }
+
+  function shouldShowPopup() {
+    const today = new Date().toISOString().split("T")[0];
+    const lastShownDate = localStorage.getItem("lastPopupDate");
+
+    if (lastShownDate !== today) {
+      localStorage.setItem("lastPopupDate", today);
+      return true;
+    }
+    return false;
+  }
+
+  window.onload = function () {
+    if (shouldShowPopup()) {
+      openPopup();
+    }
+  };
 
   setInterval(sliderEffect, slideInterval);
 });
