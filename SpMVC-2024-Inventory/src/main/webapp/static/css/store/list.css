@@ -7,56 +7,61 @@ section.store.list {
   width: 100%;
   gap: 10%;
   margin-top: 80px;
-  article.list {
-    div {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-      padding: 1.5rem;
-      margin: 10px auto;
-      background-color: darksalmon;
-      border-radius: 10px;
-      border: none;
-      span.name {
-        font-weight: 900;
-        font-size: 2.5rem;
-      }
+}
 
-      &:hover {
-        cursor: pointer;
-        background-color: deepskyblue;
-      }
-    }
+article.list div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  margin: 10px auto;
+  background-color: #ff9aa2;
+  border-radius: 10px;
+  border: none;
+  transition: background-color 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #f6f6f6;
   }
+}
 
-  article.info {
-    height: 100%;
-    div {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-      padding: 1.5rem;
-      margin: 10px auto;
-      background-color: mediumpurple;
-      border-radius: 10px;
-      border: none;
-      height: 600px;
+span.name {
+  font-weight: 900;
+  font-size: 2.5rem;
+  color: #333;
+}
 
-      img {
-        width: 200px;
-        height: 300px;
-      }
+article.info {
+  height: 100%;
+}
 
-      span.name {
-        font-weight: 900;
-        font-size: 2.5rem;
-      }
-    }
-  }
+article.info div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  margin: 10px auto;
+  background-color: #b3cde0;
+  border-radius: 10px;
+  border: none;
+  height: 600px;
+}
+
+article.info img {
+  width: 200px;
+  height: 300px;
+  border-radius: 8px;
+}
+
+article.info span.name {
+  font-weight: 900;
+  font-size: 2.5rem;
+  color: #222;
 }
