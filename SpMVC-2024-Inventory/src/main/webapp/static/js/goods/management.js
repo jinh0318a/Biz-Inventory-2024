@@ -3,8 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const section = document.querySelector("section.goods.list");
   const management_form = section?.querySelector("form.update-all");
   const detail_form = section?.querySelector("article.detail form.detail");
-  const btn_delete = document.querySelector("#deleteButton");
-  const btn_update = document.querySelector("#updateButton");
+
   const onSubmit = (e) => {
     // 상품 전체 재고 수정
     const input_all = management_form?.querySelectorAll("input.g_count");
@@ -18,33 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // 상품 재고 수정
-  const onUpdate = async () => {
-    const input_detail = detail_form
-      .querySelector("div.info")
-      .querySelector("div.count")
-      .querySelector("input.g_count");
-    if (!input_detail.value.trim()) {
-      alert("값을 입력해주세요.");
-      input_detail.focus();
-      e.preventDefault();
-      return false;
-    }
-  };
-
-  // 상품 삭제
-  const onDelete = async () => {
-    const confirmation = confirm("정말로 삭제하시겠습니까?");
-    if (!confirmation) {
-      e.preventDefault();
-      return false;
-    }
-  };
-
   management_form?.addEventListener("submit", onSubmit);
   detail_form?.addEventListener("submit", onSubmit);
-  btn_delete?.addEventListener("click", onDelete);
-  btn_update?.addEventListener("click", onUpdate);
 });
 
 // 상품 등록
