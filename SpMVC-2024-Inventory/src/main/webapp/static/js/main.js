@@ -33,7 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function openPopup() {
     const popupUrl = `${rootPath}/detail/popup`;
-    window.open(popupUrl, "popupWindow", "width=600,height=800,scrollbars=yes");
+    window.open(
+      popupUrl,
+      "popupWindow",
+      "width=1200,height=700,scrollbars=yes"
+    );
   }
 
   function shouldShowPopup() {
@@ -52,6 +56,5 @@ document.addEventListener("DOMContentLoaded", () => {
       openPopup();
     }
   };
-
   setInterval(sliderEffect, slideInterval);
 });
