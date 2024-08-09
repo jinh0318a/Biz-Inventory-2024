@@ -6,6 +6,7 @@ section.store.list {
   align-items: center;
   width: 100%;
   gap: 10%;
+  margin-top: 80px;
   article.list {
     div {
       flex: 1;
