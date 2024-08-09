@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentIndex = 0;
   const sliderCount = slide?.length;
   const slideInterval = 3000;
-  const sliderWidth = 800;
+  const sliderWidth = 1200;
 
   const slideClone = slides?.firstElementChild.cloneNode(true);
   slides?.appendChild(slideClone);
