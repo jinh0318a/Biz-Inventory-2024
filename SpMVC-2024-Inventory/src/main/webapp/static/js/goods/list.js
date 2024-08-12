@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const goods_list = document.querySelector("table.goods.list");
   const detail_box = document.querySelector("article.detail");
-  const onClickHandelr = async (e) => {
+  const onClickHandler = async (e) => {
     const target = e.target;
     if (target.tagName === "TD") {
       const tr = target.closest("TR");
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       applyEventHandlers();
     }
   };
-  goods_list?.addEventListener("click", onClickHandelr);
+  goods_list?.addEventListener("click", onClickHandler);
 
   const applyEventHandlers = () => {
     const section = document.querySelector("section.goods.list");
