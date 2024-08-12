@@ -11,7 +11,7 @@
 		<article class="list">
 			<c:forEach items="${STORELIST }" var="one">
 				<div class="store" data-s_code="${one.s_code }">
-					<span class="name">${one.s_name }</span>
+					<h1 class="name">${one.s_name }</h1>
 				</div>
 			</c:forEach>
 		</article>

@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   store_list?.addEventListener("click", (e) => {
     const target = e.target;
-    if (target.tagName === "SPAN") {
+    if (target.tagName === "H1") {
       const div = target.closest("DIV");
       s_code = div.dataset.s_code;
       onClickHandler();
