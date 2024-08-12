@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    const onUpdate = async (e) => {
+    const onUpdate = (e) => {
       e.preventDefault();
 
       if (detail_form) {
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    const onDelete = async (e) => {
+    const onDelete = (e) => {
       e.preventDefault();
 
       const confirmation = confirm("정말로 삭제하시겠습니까?");
@@ -68,6 +68,4 @@ document.addEventListener("DOMContentLoaded", () => {
     btn_delete?.addEventListener("click", onDelete);
     btn_update?.addEventListener("click", onUpdate);
   };
-
-  document.getElementById("loadContent").addEventListener("click", loadContent);
 });
