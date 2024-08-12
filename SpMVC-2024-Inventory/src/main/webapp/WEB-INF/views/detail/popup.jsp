@@ -9,7 +9,7 @@
 <title>공지사항</title>
 <link href="${rootPath }/static/css/popup.css" rel="stylesheet">
 </head>
-<body onload="window.resizeTo(1200,700)">
+<body>
 	<section class="popup">
 		<h1>공지사항</h1>
 		<div>

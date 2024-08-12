@@ -25,10 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
         currentIndex = 0;
       }, 600);
     }
-
-    if (currentIndex === 0) {
-      showPopup();
-    }
   }
 
   function openPopup() {
@@ -41,7 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function shouldShowPopup() {
-    const today = new Date().toISOString().split("T")[0];
+    const utc = new Date();
+    const offset = utc.getTimezoneOffset() * 60000;
+    const gmt = new Date(utc.getTime() - offset);
+    const today = gmt.toISOString().split("T")[0];
     const lastShownDate = localStorage.getItem("lastPopupDate");
 
     if (lastShownDate !== today) {
@@ -51,10 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
     return false;
   }
 
-  window.onload = function () {
-    if (shouldShowPopup()) {
-      openPopup();
-    }
-  };
+  if (shouldShowPopup()) {
+    openPopup();
+  }
+
   setInterval(sliderEffect, slideInterval);
 });
