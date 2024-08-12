@@ -52,7 +52,7 @@ public class CommentController {
 			return "redirect:/login";
 		}
 		CommentVO comment = commentDao.findByCode(commentVO.getC_code());
-		if (commentVO.getC_body() == null) {
+		if (commentVO.getC_body() == null || commentVO.getC_body().isBlank()) {
 			commentVO.setC_body(comment.getC_body());
 		}
 		commentVO.setC_writer(manager.getM_id());
