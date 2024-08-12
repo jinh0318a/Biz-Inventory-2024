@@ -12,6 +12,7 @@
 				title="상품사진" />
 		</div>
 		<div class="info">
+			<div>상품코드 ${GOOD.g_code }</div>
 			<div class="name">상품명 ${GOOD.g_name }</div>
 			<div>가격 ${GOOD.g_price }원</div>
 			<div class="count">
@@ -19,9 +20,10 @@
 					class="g_count" />개
 			</div>
 			<div>
-				<button type="submit" class="button update" id="updateButton">재고 수정</button>
+				<button type="submit" class="button update" id="updateButton">재고
+					수정</button>
 				<a href="${rootPath }/goods/delete?g_code=${GOOD.g_code}"><input
-					type="button" value="삭제" class="delete" id="deleteButton"/></a>
+					type="button" value="삭제" class="delete" id="deleteButton" /></a>
 			</div>
 		</div>
 	</form>
