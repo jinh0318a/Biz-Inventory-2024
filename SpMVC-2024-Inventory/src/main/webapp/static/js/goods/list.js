@@ -23,14 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const btn_update = document.querySelector("#updateButton");
 
     const onSubmit = (e) => {
-      e.preventDefault();
-
       if (detail_form) {
         const input_detail = detail_form
           .querySelector("div.info")
           .querySelector("div.count")
           .querySelector("input.g_count");
         if (!input_detail.value.trim()) {
+          e.preventDefault();
           alert("값을 입력해주세요.");
           input_detail.focus();
           return false;
@@ -39,14 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const onUpdate = (e) => {
-      e.preventDefault();
-
       if (detail_form) {
         const input_detail = detail_form
           .querySelector("div.info")
           .querySelector("div.count")
           .querySelector("input.g_count");
         if (!input_detail.value.trim()) {
+          e.preventDefault();
           alert("값을 입력해주세요.");
           input_detail.focus();
           return false;
@@ -55,10 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const onDelete = (e) => {
-      e.preventDefault();
-
       const confirmation = confirm("정말로 삭제하시겠습니까?");
       if (!confirmation) {
+        e.preventDefault();
         return false;
       }
     };
